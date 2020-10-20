@@ -1,6 +1,8 @@
 package com.natasafi.pma.controllers;
 
+import com.natasafi.pma.entities.Project;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -8,7 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProjectController {
 
     @RequestMapping("/new")
-    public String displayProjectForm() {
+    public String displayProjectForm(Model model) {
+        Project aProject = new Project();
+
+        model.addAttribute("project", aProject);
+
         return "newProject";
     }
 }
