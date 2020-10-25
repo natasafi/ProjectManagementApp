@@ -1,7 +1,6 @@
 package com.natasafi.pma.controllers;
 
 import com.natasafi.pma.entities.Employee;
-import com.natasafi.pma.entities.Project;
 import com.natasafi.pma.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +29,6 @@ public class EmployeeController {
     public String createEmployee(Model model, Employee employee) {
         employeeRepository.save(employee);
 
-        return "redirect:employees/new";
+        return "redirect:new";
     }
 }
