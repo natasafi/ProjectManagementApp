@@ -30,6 +30,6 @@ public class EmployeeController {
     public String createEmployee(Model model, Employee employee) {
         employeeRepository.save(employee);
 
-        return "redirect:/new";
+        return "redirect:employees/new";
     }
 }

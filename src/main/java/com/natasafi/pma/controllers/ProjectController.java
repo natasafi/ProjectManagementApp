@@ -29,6 +29,6 @@ public class ProjectController {
     public String createProject(Project project, Model model) {
         projectRepository.save(project);
 
-        return "redirect:/new";
+        return "redirect:/projects/new";
     }
 }
