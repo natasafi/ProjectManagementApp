@@ -5,6 +5,7 @@
     <title>New Project Form</title>
 </head>
 <body>
+<nav th:replace="layout :: navBar"></nav>
 
 <div class="container">
     <form action="/projects/save" th:object="${project}" method="POST">
