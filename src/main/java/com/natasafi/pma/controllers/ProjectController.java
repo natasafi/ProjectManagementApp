@@ -25,7 +25,7 @@ public class ProjectController {
 
         model.addAttribute("projects", projects);
 
-        return "employees/listProjects";
+        return "projects/listProjects";
     }
 
     @GetMapping("/new")
@@ -34,7 +34,7 @@ public class ProjectController {
 
         model.addAttribute("project", project);
 
-        return "newProject";
+        return "projects/newProject";
     }
 
     @PostMapping("/save")

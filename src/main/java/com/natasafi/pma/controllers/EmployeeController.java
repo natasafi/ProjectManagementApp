@@ -33,7 +33,7 @@ public class EmployeeController {
 
         model.addAttribute("employee", employee);
 
-        return "newEmployee";
+        return "employees/newEmployee";
     }
 
     @PostMapping("/save")
