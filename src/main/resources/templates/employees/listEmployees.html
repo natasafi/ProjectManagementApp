@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+<nav th:replace="layout :: navBar"></nav>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Employee's First Name</th>
+        <th scope="col">Employee's Last Name</th>
+        <th scope="col">Employee's Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.firstName}"></td>
+        <td th:text="${employee.lastName}"></td>
+        <td th:text="${employee.email}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

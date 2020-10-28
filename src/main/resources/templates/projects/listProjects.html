@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects</title>
+</head>
+<body>
+<nav th:replace="layout :: navBar"></nav>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Project Name</th>
+        <th scope="col">Project Stage</th>
+        <th scope="col">Project Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="project : ${projects}">
+        <td th:text="${project.name}"></td>
+        <td th:text="${project.stage}"></td>
+        <td th:text="${project.description}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
