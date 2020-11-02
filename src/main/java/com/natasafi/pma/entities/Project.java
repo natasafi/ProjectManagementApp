@@ -1,9 +1,7 @@
 package com.natasafi.pma.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Project {
@@ -16,7 +14,18 @@ public class Project {
 
     private String description;
 
+    @OneToMany(mappedBy = "project")
+    private List<Employee> employees;
+
     public Project() {
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 
     public Project(String name, String stage, String description) {

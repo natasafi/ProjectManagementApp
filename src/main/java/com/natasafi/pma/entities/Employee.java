@@ -1,8 +1,6 @@
 package com.natasafi.pma.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Employee {
@@ -14,8 +12,21 @@ public class Employee {
     private String lastName;
     private String email;
 
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST},
+    fetch = FetchType.LAZY)
+    @JoinColumn(name = "projectId")
+    private Project project;
+
     public long getEmployeeId() {
         return employeeId;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 
     public void setEmployeeId(long employeeId) {
